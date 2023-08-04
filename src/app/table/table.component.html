@@ -1,0 +1,49 @@
+<table mat-table [dataSource]='refuelings' class='mat-elevation-z8'>
+  <ng-container matColumnDef='toDate'>
+    <th mat-header-cell *matHeaderCellDef>Data</th>
+    <td mat-cell *matCellDef='let element'>{{element.toDate | date: 'dd/MM/yyyy'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='fromKm'>
+    <th mat-header-cell *matHeaderCellDef>Km Iniziali</th>
+    <td mat-cell *matCellDef='let element'>{{element.fromKm | number: '1.0-0'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='toKm'>
+    <th mat-header-cell *matHeaderCellDef>Km Finali</th>
+    <td mat-cell *matCellDef='let element'>{{element.toKm | number: '1.0-0'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='partialKm'>
+    <th mat-header-cell *matHeaderCellDef>Km Parziali</th>
+    <td mat-cell *matCellDef='let element'>{{element.partialKm | number: '1.0-0'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='fuelLt'>
+    <th mat-header-cell *matHeaderCellDef>Benzina Lt.</th>
+    <td mat-cell *matCellDef='let element'>{{element.fuelLt | number: '1.2-2'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='fuelCost'>
+    <th mat-header-cell *matHeaderCellDef>Benaina Costo</th>
+    <td mat-cell *matCellDef='let element'>{{element.fuelCost | number: '1.2-2'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='eurToLt'>
+    <th mat-header-cell *matHeaderCellDef>Euro al Litro</th>
+    <td mat-cell *matCellDef='let element'>{{element.eurToLt | number: '1.3-3'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='kmToLt'>
+    <th mat-header-cell *matHeaderCellDef>Km al Litro</th>
+    <td mat-cell *matCellDef='let element'>{{element.kmToLt | number: '1.2-2'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='eurToKm'>
+    <th mat-header-cell *matHeaderCellDef>Euro al Km</th>
+    <td mat-cell *matCellDef='let element'>{{element.eurToKm | number: '1.2-2'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='dailyKm'>
+    <th mat-header-cell *matHeaderCellDef>Km al Giorno</th>
+    <td mat-cell *matCellDef='let element'>{{element.dailyKm | number: '1.2-2'}}</td>
+  </ng-container>
+  <ng-container matColumnDef='dailyCost'>
+    <th mat-header-cell *matHeaderCellDef>Euro al Giorno</th>
+    <td mat-cell *matCellDef='let element'>{{element.dailyCost | number: '1.2-2'}}</td>
+  </ng-container>
+    
+<tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+</table>
