@@ -4,11 +4,13 @@ import { MatTableModule } from '@angular/material/table'
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
+import { ChartComponent } from './chart/chart.omponent';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { Refueling } from 'src/model/refueling';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  protected title = 'Fuel Tracker';
   protected dummyData = [
     new Refueling(new Date('04/03/2023'), new Date('06/08/2023'), 134433, 135124, 45.72, 81.79),
     new Refueling(new Date('06/08/2023'), new Date('06/19/2023'), 135124, 135562, 27.52, 49.23),

@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  app-table {
+    margin: 0 25px 0 50px;
+  }
+
+  app-chart {
+    margin: 50px 25px 0 50px;
+    min-width: 40%;
+  }
+}
