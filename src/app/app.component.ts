@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Refueling } from 'src/model/refueling';
+import { Refueling } from 'model/refueling';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,20 @@ import { Refueling } from 'src/model/refueling';
 })
 export class AppComponent {
   protected title = 'Fuel Tracker';
-  protected dummyData = [
-    new Refueling(new Date('04/03/2023'), new Date('06/08/2023'), 134433, 135124, 45.72, 81.79),
-    new Refueling(new Date('06/08/2023'), new Date('06/19/2023'), 135124, 135562, 27.52, 49.23),
-    new Refueling(new Date('06/19/2023'), new Date('07/06/2023'), 135562, 135980, 27.91, 49.62),
-    new Refueling(new Date('07/06/2023'), new Date('07/17/2023'), 135980, 136850, 52.12, 93.76),
-    new Refueling(new Date('07/17/2023'), new Date('07/24/2023'), 136850, 137521, 42.04, 76.47)
-  ]
+  protected refuelings: Refueling[] = [];
+  protected isDataAvailable?: Promise<boolean>;
+  
+  constructor(
+    private http: HttpClient,
+  ) {}
+  
+  ngOnInit() {
+    this.http.get<Refueling[]>('http://localhost:3001/api/refuelings')
+      .subscribe(result => {
+        this.refuelings = result
+          .map(x => new Refueling(new Date(x.fromDate), new Date(x.toDate), x.fromKm, x.toKm, x.fuelLt, x.fuelCost))
+          .sort((a, b) => a.fromDate.getTime() - b.fromDate.getTime());
+        this.isDataAvailable = Promise.resolve(true);
+      });
+  }
 }

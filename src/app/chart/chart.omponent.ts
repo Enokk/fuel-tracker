@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import * as moment from 'moment';
-import { Refueling } from 'src/model/refueling';
+import { Refueling } from 'model/refueling';
 
 @Component({
   selector: 'app-chart',
