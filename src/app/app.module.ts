@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
-import { ChartComponent } from './chart/chart.omponent';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
