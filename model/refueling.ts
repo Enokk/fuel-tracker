@@ -1,4 +1,4 @@
-export class Refueling {
+export default class Refueling {
   public partialKm: number;
   public eurToLt: number;
   public kmToLt: number;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Refueling } from 'model/refueling';
+import Refueling from 'model/refueling';
 
 @Component({
   selector: 'app-table',

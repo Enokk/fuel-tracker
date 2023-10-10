@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Refueling } from 'model/refueling';
 import { HttpClient } from '@angular/common/http';
+import Refueling from 'model/refueling';
 
 @Component({
   selector: 'app-root',
