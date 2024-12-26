@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center fs-1">Refueling List</div>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>From KM</th>
+      <th>To KM</th>
+      <th>Fuel L</th>
+      <th>Fuel Cost</th>
+    </tr>
+    {% for refueling in refuelings %}
+    <tr>
+      <td>{{ refueling.refueling_date }}</td>
+      <td>{{ refueling.from_km }}</td>
+      <td>{{ refueling.to_km }}</td>
+      <td>{{ refueling.fuel_lt }}</td>
+      <td>{{ refueling.fuel_cost }}</td>
+      <td><a href="">Edit</a></td>
+      <td><a href="">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+{% endblock %}
